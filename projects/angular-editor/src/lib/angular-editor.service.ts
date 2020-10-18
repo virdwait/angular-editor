@@ -199,15 +199,9 @@ export class AngularEditorService {
   }
 
   private insertYouTubeVideoTag(videoUrl: string): void {
-    const id = videoUrl.split('v=')[1];
-    const imageUrl = `https://img.youtube.com/vi/${id}/0.jpg`;
     const thumbnail = `
       <div style='position: relative'>
-        <img style='position: absolute; left:200px; top:140px'
-             src="https://img.icons8.com/color/96/000000/youtube-play.png"/>
-        <a href='${videoUrl}' target='_blank'>
-          <img src="${imageUrl}" alt="click to watch"/>
-        </a>
+        <iframe width="560" height="315" src='${videoUrl}' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>`;
     this.insertHtml(thumbnail);
   }
