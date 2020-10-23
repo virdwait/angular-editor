@@ -8,6 +8,7 @@ a {
 .angular-editor-textarea {
   min-height: 150px;
   overflow: auto;
+  overflow-x: hidden;
   margin-top: 5px;
   resize: vertical;
   &:after {
@@ -110,7 +111,7 @@ a {
     .select-heading {
       display: inline-block;
       width: 90px;
-      @supports not( -moz-appearance:none ) {
+      //@supports not( -moz-appearance:none ) {
         optgroup {
           font-size: 12px;
           background-color: #f4f4f4;
@@ -147,7 +148,7 @@ a {
         .pre {
           font-size: 12px;
         }
-      }
+      //}
 
       &:disabled {
         background-color: #f5f5f5;
@@ -165,7 +166,7 @@ a {
     .select-font {
       display: inline-block;
       width: 90px;
-      @supports not( -moz-appearance:none ) {
+      //@supports not( -moz-appearance:none ) {
         optgroup {
           font-size: 12px;
           background-color: #f4f4f4;
@@ -175,7 +176,7 @@ a {
           border: 1px solid;
           background-color: white;
         }
-      }
+      //}
 
       &:disabled {
         background-color: #f5f5f5;
@@ -193,7 +194,7 @@ a {
     .select-font-size {
       display: inline-block;
       width: 50px;
-      @supports not( -moz-appearance:none ) {
+      /*@supports not( -moz-appearance:none ) {*/
         optgroup {
           font-size: 12px;
           background-color: #f4f4f4;
@@ -224,7 +225,7 @@ a {
         .size7 {
           font-size: 22px;
         }
-      }
+      /*}*/
 
       &:disabled {
         background-color: #f5f5f5;
@@ -242,7 +243,7 @@ a {
     .select-custom-style {
       display: inline-block;
       width: 90px;
-      @supports not( -moz-appearance:none ) {
+      /*@supports not( -moz-appearance:none ) {*/
         optgroup {
           font-size: 12px;
           background-color: #f4f4f4;
@@ -273,7 +274,7 @@ a {
         .size7 {
           font-size: 22px;
         }*/
-      }
+      /*}*/
 
       &:disabled {
         background-color: #f5f5f5;
