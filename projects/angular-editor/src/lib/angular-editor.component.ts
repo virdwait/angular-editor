@@ -34,7 +34,8 @@ import {isDefined} from './utils';
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => AngularEditorComponent),
       multi: true
-    }
+    },
+    AngularEditorService
   ]
 })
 export class AngularEditorComponent implements OnInit, ControlValueAccessor, AfterViewInit, OnDestroy {
@@ -61,7 +62,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
 
   @ViewChild('editor', {static: true}) textArea: ElementRef;
   @ViewChild('editorWrapper', {static: true}) editorWrapper: ElementRef;
-  @ViewChild('editorToolbar', {static: false}) editorToolbar: AngularEditorToolbarComponent;
+  @ViewChild('editorToolbar') editorToolbar: AngularEditorToolbarComponent;
 
   @Output() viewMode = new EventEmitter<boolean>();
 
@@ -109,6 +110,9 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
    */
   executeCommand(command: string) {
     this.focus();
+    if (command === 'focus') {
+      return;
+    }
     if (command === 'toggleEditorMode') {
       this.toggleEditorMode(this.modeVisual);
     } else if (command !== '') {
